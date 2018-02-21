@@ -1,5 +1,6 @@
 type file
 id StringMatcher
+version 0.1.0
 owners Marco Link
 authors Marco Link
 projectUrl
@@ -17,7 +18,6 @@ summary
 description
     A Simple string matcher builder for Unity (works also on normal c# projects).
 files
-    Assets/**/* ==> content
+    Unity.StringMatcher/Assets/**/* ==> content
     !../**/AssemblyInfo.cs
-    ../README.md ==> content
-dependencies
+    README.md ==> content
