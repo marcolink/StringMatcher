@@ -1,0 +1,4 @@
+plugins {
+    id 'net.wooga.paket' version '0.10.1'
+    id 'net.wooga.paket-unity' version '0.10.1'
+}
