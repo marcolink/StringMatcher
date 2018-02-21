@@ -1,0 +1,23 @@
+type file
+id StringMatcher
+owners Marco Link
+authors Marco Link
+projectUrl
+    https://github.com/marcolink/StringMatcher
+licenseUrl
+    https://github.com/marcolink/StringMatcher/blob/master/LICENSE
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2018
+tags
+    unity
+summary
+    A simple String Matcher Builder
+description
+    A Simple string matcher builder for Unity (works also on normal c# projects).
+files
+    Assets/**/* ==> content
+    !../**/AssemblyInfo.cs
+    ../README.md ==> content
+dependencies
