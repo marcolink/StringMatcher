@@ -1,6 +1,5 @@
 type file
 id StringMatcher
-version 0.1.0
 owners Marco Link
 authors Marco Link
 projectUrl
