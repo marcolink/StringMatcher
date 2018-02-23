@@ -1,10 +1,11 @@
 plugins {
-    id 'net.wooga.unity' version '0.16.0'
+    id 'net.wooga.unity' version '0.16.1'
     id 'net.wooga.github' version '0.6.1'
     id 'net.wooga.paket' version '0.10.1'
 }
 
-version = "0.1.4"
+// if version is set, property from paket.template will be overriden
+version = "0.1.5"
 
 // export unity package
 exportUnityPackage {
@@ -36,6 +37,7 @@ githubPublish {
     from configurations.archives
 }
 
+// add binaries to release 
 configurations.archives.extendsFrom(configurations.nupkg)
 configurations.archives.extendsFrom(configurations.unitypackage)
 
