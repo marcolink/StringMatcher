@@ -17,6 +17,6 @@ summary
 description
     A Simple string matcher builder for Unity (works also on normal c# projects).
 files
-    Unity.StringMatcher/Assets/**/* ==> content
+    Unity.StringMatcher/Assets/StringMatcher/**/* ==> content
     !../**/AssemblyInfo.cs
     README.md ==> content

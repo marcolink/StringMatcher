@@ -1,9 +1,21 @@
 plugins {
+    id 'net.wooga.unity' version '0.16.0'
     id 'net.wooga.github' version '0.6.1'
     id 'net.wooga.paket' version '0.10.1'
 }
 
-version = "0.1.3"
+version = "0.1.4"
+
+// export unity package
+exportUnityPackage {
+    inputFiles file("Unity.StringMatcher/Assets/StringMatcher")
+}
+
+// define batchmode task for unitypackage creation
+unity {
+  defaultBuildTarget = "android"
+  projectPath = file("Unity.StringMatcher")
+}
 
 // Define publish task for nuget
 publishing {
@@ -25,11 +37,22 @@ githubPublish {
 }
 
 configurations.archives.extendsFrom(configurations.nupkg)
+configurations.archives.extendsFrom(configurations.unitypackage)
+
 githubPublish.dependsOn {configurations.archives}
+githubPublish.dependsOn {configurations.unitypackage}
 
 project.afterEvaluate {
     Configuration paketConfiguration = project.configurations.nupkg
+    Configuration unitypackageConfiguration = project.configurations.unitypackage
+
     paketConfiguration.allArtifacts.each {
+        println(it.file)
+        project.dependencies.add("archives", project.files(it.file).builtBy(it.buildDependencies))
+    }
+
+    unitypackageConfiguration.allArtifacts.each {
+        println(it.file)
         project.dependencies.add("archives", project.files(it.file).builtBy(it.buildDependencies))
     }
 }
